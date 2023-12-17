@@ -17,14 +17,15 @@ public class Chambre {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private String typeChambre;
     private int nombreLits;
-    private double prix;
+    private String typeChambre;
 
+    private double prix;
 
     @ManyToOne
     @JoinColumn(name="idHotel")
     private Hotel hotel;
+
     private String imageUrl;
 
     @ToString.Exclude

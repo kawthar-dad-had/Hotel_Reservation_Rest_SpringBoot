@@ -38,4 +38,6 @@ public class Reservation {
     private AgencePartenaire agence;
     private double prix;
 
+    public Reservation(Date dateArrivee, Date dateDepart, int nombrePersonnes, Client client, Long idHotel, Long idChambre, Long agencePartenaireId) {
+    }
 }

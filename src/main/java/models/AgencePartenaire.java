@@ -26,12 +26,8 @@ public class AgencePartenaire {
 
     @ToString.Exclude
     @JsonIgnore
-    @ManyToMany
-    @JoinTable(
-            name = "AgenceHotel",
-            joinColumns = @JoinColumn(name = "hotel_id"),
-            inverseJoinColumns = @JoinColumn(name = "Agence_id"))
-    private Set<Hotel> hotels;
+    @ManyToMany(mappedBy = "tarifsAgences",fetch = FetchType.EAGER)
+    Set<Hotel> hotels;
 
     @ToString.Exclude
     @JsonIgnore

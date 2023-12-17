@@ -23,9 +23,8 @@ public class Hotel {
     private Adresse adresse;
     private int nombreEtoiles;
 
-    @ToString.Exclude
-    @JsonIgnore
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "AgenceHotel",
             joinColumns = @JoinColumn(name = "hotel_id"),
@@ -36,6 +35,8 @@ public class Hotel {
     @JsonIgnore
     @OneToMany(mappedBy = "hotel", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Collection<Reservation> lesReservations;
+
+
 
     @ToString.Exclude
     @JsonIgnore
